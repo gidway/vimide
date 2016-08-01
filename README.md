@@ -19,6 +19,11 @@ $ sudo ln ~/.vim/scripts/make-* /usr/local/bin/
 * ctags :: for example: http://ctags.sourceforge.net/
 * NeoVIM :: https://neovim.io/ | as option
 
+### NeoVIM config
+```bash
+$ ln -s ~/.vim ~/.config/nvim
+```
+
 ## UPDATE
 ```bash
 $ cd ~/.vim/ ; git pull --all && git submodule update .
