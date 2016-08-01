@@ -17,7 +17,7 @@ $ sudo ln ~/.vim/scripts/make-* /usr/local/bin/
 
 * PowerLine Fonts :: https://github.com/powerline/fonts
 * ctags :: for example: http://ctags.sourceforge.net/
-* NeoVIM :: https://neovim.io/
+* NeoVIM :: https://neovim.io/ | as option
 
 ## UPDATE
 ```bash
