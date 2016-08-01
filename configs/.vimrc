@@ -44,7 +44,6 @@ endif
 :set smartcase
 :set number
 :set mouse=a
-:set background=light
 :set backupcopy=auto
 :set autoindent
 :set smartindent
@@ -113,8 +112,8 @@ au Syntax myerror source $HOME/.vim/cerr.vim
 filetype plugin indent on
 colorscheme gruvbox
 colo gruvbox
-:hi Normal ctermbg=none
 set background=dark
+:hi Normal ctermbg=none
 
 :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', 22)
