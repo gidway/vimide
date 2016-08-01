@@ -1,4 +1,8 @@
+filetype plugin on
+
 execute pathogen#infect()
+
+set omnifunc=syntaxcomplete#Complete
 
 set encoding=utf-8
 let g:Powerline_symbols = 'fancy'
