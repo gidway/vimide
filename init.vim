@@ -1,1 +1,1 @@
-/home/gidway/.vimrc
+configs/.vimrc

@@ -3,13 +3,6 @@ filetype plugin on
 execute pathogen#infect()
 :set omnifunc=syntaxcomplete#Complete
 
-" default Theme
-filetype plugin indent on
-colorscheme gruvbox
-colo gruvbox
-:set background=dark
-:hi Normal ctermbg=none
-
 :let g:Powerline_symbols = 'fancy'
 
 " air-line
@@ -115,6 +108,13 @@ au BufRead,BufNewFile *.xul set filetype=html
 au Syntax myerror source $HOME/.vim/cerr.vim
 
 :set list listchars=tab:»»,trail:·,extends:»,precedes:«,nbsp:×
+
+" default Theme
+filetype plugin indent on
+colorscheme gruvbox
+colo gruvbox
+:hi Normal ctermbg=none
+set background=dark
 
 :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', 22)
