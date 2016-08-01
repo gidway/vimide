@@ -8,6 +8,8 @@ $ mv ~/.vim* ~/backup/
 ## INSTALL
 ```bash
 $ git clone https://github.com/gidway/vimide.git ~/.vim
+$ cd ~/.vim/
+$ git submodule init && git submodule update .
 $ ln -s ~/.vim/configs/.vimrc ~/
 $ sudo ln ~/.vim/scripts/make-* /usr/local/bin/
 ```
@@ -15,3 +17,8 @@ $ sudo ln ~/.vim/scripts/make-* /usr/local/bin/
 
 * PowerLine Fonts :: https://github.com/powerline/fonts
 * ctags :: for example: http://ctags.sourceforge.net/
+
+## UPDATE
+```bash
+$ cd ~/.vim/ ; git pull --all && git submodule update .
+```
