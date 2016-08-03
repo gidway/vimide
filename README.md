@@ -22,6 +22,7 @@ $ sudo ln ~/.vim/scripts/make-* /usr/local/bin/
 * bundle/vim-fugitive https://github.com/tpope/vim-fugitive
 * bundle/vim-gitgutter https://github.com/airblade/vim-gitgutter
 * bundle/vim-project https://github.com/amiorin/vim-project
+* bundle/vim-cmake https://github.com/vhdirk/vim-cmake.git
 
 ## NEEDED to work...
 
