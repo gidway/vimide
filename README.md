@@ -36,5 +36,5 @@ $ ln -s ~/.vim ~/.config/nvim
 
 ## UPDATE
 ```bash
-$ cd ~/.vim/ ; git pull --all && git submodule update .
+$ cd ~/.vim/ ; git fetch && git pull --all && git submodule init && git submodule update . && git submodule sync
 ```
