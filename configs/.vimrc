@@ -117,7 +117,7 @@ set background=dark
 
 :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', 22)
-:set textwidth=80
+:set textwidth=0
 :set colorcolumn=80
 :hi ColorColumn ctermbg=0 ctermfg=2 guibg=#900000 guifg=yellow
 :let &colorcolumn=join(range(80,80),",")
