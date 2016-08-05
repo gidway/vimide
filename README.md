@@ -37,5 +37,27 @@ $ ln -s ~/.vim ~/.config/nvim
 
 ## UPDATE
 ```bash
-$ cd ~/.vim/ ; git fetch && git pull --all && git submodule init && git submodule update . && git submodule sync
+#!/bin/bash
+cd ~/.vim/
+git stash
+git checkout master
+git fetch
+git pull --all
+git submodule init
+git submodule update .
+git submodule sync
 ```
+...or use update script ;)
+
+# Versions...
+
+## @ 0.0.2
+### # Locally .vimrc
+* first looking for **~/.local/.vimrc**
+* if not found, looking for **~/.vimrc_local**
+
+### # CTags
+Auto-CTags and custom triggers, after loadded vim instance
+### +commands:
+* CTagsGenerateLocally
+* CreateBashScript
