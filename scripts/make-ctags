@@ -1,18 +1,17 @@
 #!/bin/bash
-
-function make_ctags_file_by_file {
-  gcc -M $* | sed -e 's/[\\ ]/\n/g' | \
-    sed -e '/^$/d' -e '/\.o:[ \t]*$/d' | \
-      ctags -L - --c++-kinds=+p --fields=+iaS --extra=+q
+_lst=""
+function look_cc_files {
+  for e in `find . -type f -name "$*"` ; do _lst="$_lst $e" ; done
 }
+look_cc_files '*.c'
+look_cc_files '*.cc'
+look_cc_files '*.cpp'
+look_cc_files '*.cxx'
+look_cc_files '*.h'
+look_cc_files '*.hh'
+look_cc_files '*.hpp'
+look_cc_files '*.hxx'
 
-if [ "$1" == "-r" ] || [ "$1" == '-R' ] ; then
-  _dir="$2"
-  if [ "${_dir}" != "" ] ; then _dir="`pwd`" ; fi
-  ctags -R --c++-kinds=+p --fields=+iaS --extra=+q $_dir
-else
-  make_ctags_file_by_file $*
-fi
-
-if [ -f './tags' ] ; then mv ./tags .tags ; fi
-
+gcc -M $_lst | sed -e 's/[\\ ]/\n/g' | \
+  sed -e '/^$/d' -e '/\.o:[ \t]*$/d' | \
+  ctags -f .ctags -L - --c++-kinds=+p --fields=+iaS --extra=+q
