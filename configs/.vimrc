@@ -128,18 +128,14 @@ command CTagsGenerateLocally execute "!ctags -R -f .ctags . %"
 command CTagsGenerateLocallyRecursive execute "!~/.vim/scripts/make-ctags . %"
 function! FDelTagOfFile(file)
   let fullpath = a:file
-  let cwd = getcwd()
-  let tagfilename = "/tmp/.ctags-auto"
-  let f = substitute(fullpath, cwd . "/", "", "")
+  let f = substitute(fullpath, getcwd() . "/", "", "")
   let f = escape(f, './')
-  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+  let cmd = 'sed -i "/' . f . '/d" "/tmp/.ctagsvim"'
   let resp = system(cmd)
 endfunction
 function! FUpdateTags()
   let f = expand("%:p")
-  let cwd = getcwd()
-  let tagfilename = "/tmp/.ctags-auto"
-  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+  let cmd = 'ctags -a -f /tmp/.ctagsvim --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
   call FDelTagOfFile(f)
   let resp = system(cmd)
 endfunction
@@ -148,8 +144,7 @@ autocmd BufWritePost * call FUpdateTags()
 
 " create documents
 function! FCreateBashScript(file)
-  let fullpath = a:file
-  !~/.vim/scripts/make-bash-script fullpath &>/dev/null
-  :e fullpath
+  let resp = system('~/.vim/scripts/make-bash-script ' . a:file)
+  execute 'e ' . a:file
 endfunction
 command! -nargs=1 CreateBashScript call FCreateBashScript(<f-args>)
