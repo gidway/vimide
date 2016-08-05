@@ -115,8 +115,8 @@ colo gruvbox
 set background=dark
 :hi Normal ctermbg=none
 
-:au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', 22)
+:au BufWinEnter * let w:m1=matchadd('Search', '\%<121v.\%>80v', -1)
+:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', 22)
 :set textwidth=0
 :set colorcolumn=80
 :hi ColorColumn ctermbg=0 ctermfg=2 guibg=#900000 guifg=yellow
@@ -148,3 +148,14 @@ function! FCreateBashScript(file)
   execute 'e ' . a:file
 endfunction
 command! -nargs=1 CreateBashScript call FCreateBashScript(<f-args>)
+
+try
+  source ~/.local/.vimrc
+catch
+  " No such file? No problem; just ignore it.
+  try
+    source ~/.vimrc_local
+  catch
+    " No such file? No problem; just ignore it.
+  endtry
+endtry 
