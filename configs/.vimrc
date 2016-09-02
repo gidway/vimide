@@ -145,7 +145,7 @@ autocmd BufWritePost * call FUpdateTags()
 " create documents
 function! FCreateBashScript(file)
   let resp = system('~/.vim/scripts/make-bash-script ' . a:file)
-  execute 'e ' . a:file
+  execute '!e ' . a:file
 endfunction
 command! -nargs=1 CreateBashScript call FCreateBashScript(<f-args>)
 
