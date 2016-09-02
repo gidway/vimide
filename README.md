@@ -1,6 +1,20 @@
 # vimide
 VIM is a IDE ;)
 
+
+# screen-shots
+
+#### C++ file - view
+![C++ file](https://github.com/gidway/vimide/raw/master/images/Screenshot_2016-09-02_12-07-46.png)
+
+#### C++ file with some error
+VIMIDE show what and where
+
+![C++ file with some error](https://github.com/gidway/vimide/raw/master/images/Screenshot_2016-09-02_12-08-12.png)
+
+#### C++ file - view with extra panels
+![alt tag](https://github.com/gidway/vimide/raw/master/images/Screenshot_2016-09-02_12-11-38.png)
+
 ## ...prepare
 ```bash
 $ mv ~/.vim* ~/backup/
