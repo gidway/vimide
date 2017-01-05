@@ -5,4 +5,15 @@ git fetch && \
     git submodule init && \
     git submodule update . &&\
     git submodule sync && \
+
+_wd=`pwd`
+for repo in `find ${_wd} -type d -name '.git' 2>/dev/null` ; do
+    cd ${repo}/../
+    git fetch
+    git checkout master
+    git pull --all
+    git submodule init && git submodule update . && git submodule sync
+done
+cd ${_wd}
+
 echo "--DONE--"
