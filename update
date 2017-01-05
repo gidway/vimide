@@ -7,8 +7,10 @@ git fetch && \
     git submodule sync && \
 
 _wd=`pwd`
-for repo in `find ${_wd} -type d -name '.git' 2>/dev/null` ; do
-    cd ${repo}/../
+for repo in `find ${_wd} -type f -name '.git' 2>/dev/null` ; do
+    repo="${repo/.git/}"
+    echo "---- repo="$repo
+    cd ${repo}/
     git fetch
     git checkout master
     git pull --all
